@@ -278,7 +278,7 @@
 								<h1 class="big">About</h1>
 								<h2 class="mb-4">About Me</h2>
 								
-								<p>Hi, I'm Nayana! 👋</p>
+								<p>Hi, I’m Nayana! 👋</p>
 								<p>
 									A passionate Product Manager currently pursuing my Master's in Engineering Management at Northeastern University. 
 									I thrive on understanding user needs, solving complex problems, and collaborating with cross-functional teams to build impactful products.
@@ -290,7 +290,7 @@
 								</p>
 
 								<p>
-									I'm actively exploring opportunities for Summer & Fall 2025 internships in:
+									I’m actively exploring opportunities for Summer & Fall 2025 internships in:
 								</p>
 								<ul>
 									<li>🔹 Product Management</li>
@@ -301,12 +301,12 @@
 								</ul>
 
 								<p>
-									When I'm not brainstorming product ideas, you'll find me dancing (literally 💃) 
+									When I’m not brainstorming product ideas, you’ll find me dancing (literally 💃) 
 									or exploring new ways to make supply chains smarter and more sustainable.
 								</p>
 
 								<p>
-									Let's connect and create products that truly make a difference! 🚀
+									Let’s connect and create products that truly make a difference! 🚀
 								</p>
 								<ul class="about-info mt-4 px-md-0 px-2">
 									<li class="d-flex"><span>Profile:</span> <span>Product Management &amp; Supply chain Management</span></li>
@@ -363,7 +363,7 @@
 							<ul>
 								<li>Analyzed U.S. ovarian and breast cancer screening markets using NHIS, SEER, and CMS datasets; identified 3 underserved population segments, guiding targeted go-to-market decisions.</li>
                                 <li>Built risk-stratified market entry framework using QCancer and BOADICEA models; findings shaped product positioning and accelerated pilot readiness by 25%.</li>
-                                <li>Collaborating with engineering and design teams to build one of the product's most critical features, focusing on usability, data integrity,and workflow optimization — driving 30% improvement in end-to-end platform efficiency.</li>
+                                <li>Collaborating with engineering and design teams to build one of the product’s most critical features, focusing on usability, data integrity,and workflow optimization — driving 30% improvement in end-to-end platform efficiency.</li>
                                 <li>Developed market segmentation and payer dynamics model, improving visibility into reimbursement gaps and informing $2M market expansion forecast.</li>
                                 <li>Partnered with engineering and design teams to define MVP features and health-data modules; enhanced platform usability and boosted product completeness by 30% ahead of launch.</li>
 						</p>
@@ -489,7 +489,7 @@
               <div class="text mt-3 float-right d-block">
 
                 <h3 class="heading"><a href="https://github.com/NayanaMagadiNagaraj/Perqs-with-Zelle">Perq's with Zelle: Seamless Financial Transactions With Rewards</a></h3>
-                <p>Enhanced Zelle's platform by integrating rewards and a digital wallet, applying WBS, Gantt charts, Agile sprints, risk assessment, and stakeholder mapping to ensure smooth project delivery.</p>
+                <p>Enhanced Zelle’s platform by integrating rewards and a digital wallet, applying WBS, Gantt charts, Agile sprints, risk assessment, and stakeholder mapping to ensure smooth project delivery.</p>
               </div>
             </div>
           </div>
@@ -515,7 +515,7 @@
 				<div class="text mt-3 float-right d-block">
   
 				  <h3 class="heading"><a href="https://github.com/NayanaMagadiNagaraj/Chobani-Supply-Chain-Analysis">Chobani Supply Chain Analysis</a></h3>
-				  <p>Analyzed Chobani's end-to-end supply chain and competitive strategy to identify opportunities for sustainability, operational resilience, and post-pandemic growth.</p>
+				  <p>Analyzed Chobani’s end-to-end supply chain and competitive strategy to identify opportunities for sustainability, operational resilience, and post-pandemic growth.</p>
 				</div>
 			  </div>
 			</div>
@@ -613,7 +613,7 @@
           			<span class="icon-paper-plane"></span>
           		</div>
           		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:magadinagaraj.n@northeastern.edu">magadinagaraj.n@northeastern.edu</a></p>
+	            <p><a href="mailto:info@yoursite.com">magadinagaraj.n@northeastern.edu</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -622,7 +622,7 @@
           			<span class="icon-globe"></span>
           		</div>
           		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="https://drive.google.com/file/d/129617NLF5ZJDt5SkLBtbKU6Zs6v2fcGo/view?usp=sharing">resumelink</a></p>
+	            <p><a href="https://drive.google.com/file/d/1JXimFMcjr8he-nghOg-NIhXy9w-_Rgkd/view?usp=sharing">resumelink</a></p>
 	          </div>
           </div>
 
@@ -631,7 +631,7 @@
 			<br>
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="mailto:magadinagaraj.n@northeastern.edu" class="btn btn-primary py-3 px-5">Mail Me</a> </h2>
+					<h2>Have a<span> Question?  </span> <a href="#" class="btn btn-primary py-3 px-5">Mail Me</a> </h2>
 				</div>
 			</div>
 				<br>
@@ -680,49 +680,6 @@
   <script src="js/scrollax.min.js"></script>
   
   <script src="js/main.js"></script>
-
-  <!-- CRITICAL FIX: Backup script to hide loader if main.js fails or takes too long -->
-  <script>
-    // This script ensures the loader gets hidden no matter what
-    (function() {
-      var loaderHidden = false;
-      
-      function hideLoader() {
-        if (loaderHidden) return;
-        loaderHidden = true;
-        
-        var loader = document.getElementById('ftco-loader');
-        if (loader) {
-          // Remove the 'show' class
-          loader.classList.remove('show');
-          
-          // Force hide with inline style as backup
-          setTimeout(function() {
-            loader.style.display = 'none';
-          }, 300);
-        }
-      }
-      
-      // Try to hide loader when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', hideLoader);
-      } else {
-        hideLoader();
-      }
-      
-      // Also try when page is fully loaded
-      window.addEventListener('load', hideLoader);
-      
-      // Failsafe: Force hide after 2 seconds no matter what
-      setTimeout(hideLoader, 2000);
-      
-      // If jQuery is available, use it too
-      if (typeof jQuery !== 'undefined') {
-        jQuery(document).ready(hideLoader);
-        jQuery(window).on('load', hideLoader);
-      }
-    })();
-  </script>
     
   </body>
 </html>
