@@ -1,687 +1,1020 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>NayanaMagadiNagaraj Portfolio</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayana Magadi Nagaraj | Product Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --text: #cbd5e1;
+            --text-light: #94a3b8;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
 
-    <link rel="stylesheet" href="css/aos.css">
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
 
+        nav.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
 
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-<style>
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-/*======================================
-//--//-->   ABOUT
-======================================*/
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
 
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
 
-.about-mf .about-img img {
-  margin-left: 10px;
-}
+        .nav-links a:hover {
+            color: var(--white);
+        }
 
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
-}
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 8rem 2rem 4rem;
+            overflow: hidden;
+        }
 
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+            z-index: 0;
+        }
 
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
 
-/* Animation styles */
-#typing-animation {
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
+        .hero-content {
+            animation: fadeInLeft 1s ease;
+        }
 
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
+        .hero-label {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-@keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
-}
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
 
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
 
-/* project image zoom effect */
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
 
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.3s ease-out;
-}
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
 
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
 
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        }
 
-</style>
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
 
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
 
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Nayana Magadi Nagaraj</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 1s ease;
+        }
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);">
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-						  <h1 class="mb-4 mt-3" style="font-size: 29px;">I'm <span>Nayana Magadi Nagaraj</span></h1>
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
 
+        .image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            background: var(--gradient);
+            border-radius: 30px;
+            opacity: 0.3;
+            filter: blur(40px);
+            z-index: -1;
+        }
 
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
+        .profile-image {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-						<script>
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
+        .stat-item {
+            text-align: center;
+        }
 
-						// Create an array of typing text
-						const typingTexts = [
-						'Product Manager  ',
-						'Business Analyst  ',
-						'Supply Chain Analyst  ',
-						];
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
 
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
 
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-						</script>
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
 
-						<br>
-						<br>
-			            <h2 style="font-size: 27px;">Ex-Amazon | Graduate Student | Masters in Engineering Management | Northeastern University</h2>
+        .section-label {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
 
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-						<!-- <br> -->
-			            <p><a href="https://www.linkedin.com/in/nayanamn25/" class="btn btn-primary py-3 px-4">LinkedIn</a> 
-							<a href="https://github.com/NayanaMagadiNagaraj" class="btn btn-white btn-outline-white py-3 px-4">My works</a>
-							<a href="https://drive.google.com/file/d/1JXimFMcjr8he-nghOg-NIhXy9w-_Rgkd/view?usp=sharing" class="btn btn-white btn-outline-white py-3 px-4">Resume</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-		</div>
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .skill-card h4 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -55px;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+        }
+
+        .timeline-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(10px);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .timeline-item li {
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-link:hover {
+            color: var(--white);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(10px);
+        }
+
+        .contact-item h4 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            color: var(--text-light);
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Nayana MN</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-label">PRODUCT MANAGER</span>
+                <h1>Building Products<br>People Love</h1>
+                <p class="hero-subtitle">Strategic Product Leader | Ex-Amazon</p>
+                <p class="hero-description">
+                    Driving user-centric innovation through data-driven strategies and cross-functional collaboration. 
+                    Specialized in healthcare, e-commerce, and emerging technologies.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Let's Connect</a>
+                    <a href="https://drive.google.com/file/d/1JXimFMcjr8he-nghOg-NIhXy9w-_Rgkd/view?usp=sharing" class="btn btn-secondary">View Resume</a>
+                </div>
+                
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3.9</div>
+                        <div class="stat-label">GPA</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30%</div>
+                        <div class="stat-label">Efficiency Gains</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="images/about-me.png" alt="Nayana Magadi Nagaraj" class="profile-image">
+                </div>
+            </div>
+        </div>
     </section>
 
+    <section id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">About Me</div>
+                <h2 class="section-title">Transforming Ideas Into Impact</h2>
+                <p class="section-description">
+                    Master's in Engineering Management student at Northeastern University with a proven track record 
+                    of delivering data-driven products across healthcare, e-commerce, and technology sectors.
+                </p>
+            </div>
 
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Product Strategy Meets Technical Excellence</h3>
+                    <p>
+                        I'm passionate about bridging the gap between user needs and technical solutions. 
+                        With 4+ years of experience across Amazon, Stage Zero Health, and YUDI J, 
+                        I've led cross-functional teams to deliver products that drive measurable business outcomes.
+                    </p>
+                    <p>
+                        My approach combines rigorous market analysis, user research, and Agile execution 
+                        to create products that not only meet market needs but exceed user expectations. 
+                        I believe in the power of data-driven decision making and user-centric design.
+                    </p>
+                    <p>
+                        Currently seeking full-time Product Management opportunities where I can leverage 
+                        my expertise in product strategy, analytics, and cross-functional leadership to 
+                        drive innovation and create meaningful user experiences.
+                    </p>
+                </div>
 
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-									  <div class="about-img">
-										<img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
-									  </div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-									  <div class="about-info">
-										<p><span class="title-s">Name: </span> <span>Nayana Magadi Nagaraj</span></p>
-										<p><span class="title-s">Job Role: </span> <span>Senior Product Associate</span></p>
-										<p><span class="title-s">Experience: </span> <span>3 Years </span></p>
-										<p><span class="title-s">Address: </span> <span>Bengaluru, India</span></p>
-									  </div>
-									</div>
-								  </div>
-
-								<div class="skill-mf">
-									<p class="title-s">Skills</p>
-									<span>SQL</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Product Road Map</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Go-To-Market Strategies</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Data Visualization</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Statistical Analysis</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="80" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-
-									<span>Case Study Analysis</span> <span class="pull-right">100%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="80" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
-								
-								<p>Hi, I’m Nayana! 👋</p>
-								<p>
-									A passionate Product Manager currently pursuing my Master's in Engineering Management at Northeastern University. 
-									I thrive on understanding user needs, solving complex problems, and collaborating with cross-functional teams to build impactful products.
-								</p>
-
-								<p>
-									With experience across product strategy, user research, data analysis, and supply chain processes, 
-									I bring a unique mix of analytical thinking and creative problem-solving to every project.
-								</p>
-
-								<p>
-									I’m actively exploring opportunities for Summer & Fall 2025 internships in:
-								</p>
-								<ul>
-									<li>🔹 Product Management</li>
-									<li>🔹 Product Design</li>
-									<li>🔹 Product Analyst</li>
-									<li>🔹 Business Analyst</li>
-									<li>🔹 Supply Chain Analyst</li>
-								</ul>
-
-								<p>
-									When I’m not brainstorming product ideas, you’ll find me dancing (literally 💃) 
-									or exploring new ways to make supply chains smarter and more sustainable.
-								</p>
-
-								<p>
-									Let’s connect and create products that truly make a difference! 🚀
-								</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Product Management &amp; Supply chain Management</span></li>
-									<li class="d-flex"><span>Product Management:</span> <span>Product Lifecycle Management, Go-to-Market Strategies, Strategic Thinking &amp; Product Delivery</span></li>
-									<li class="d-flex"><span>Technical skills:</span> <span>SQL, C, Python, R, Verilog, VLSI, Semiconductors</span></li>
-									<li class="d-flex"><span>Tools: </span> <span>MySQL, Microsoft Excel, Word, Outlook, Teams, PowerPoint, Tableau, Power BI, Git</span></li>
-									<li class="d-flex"><span>Certifications: </span> <span>Product Management: Building a Product Roadmap &amp; Product Strategy</span></li>									
-								</ul>
-							</div>
-						</div>
-
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="10">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p>
-								<p><a href="https://www.linkedin.com/in/nayanamn25/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4>Product Strategy</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Data Analysis</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h4>User Research</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Agile/Scrum</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h4>SQL & Analytics</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Go-to-Market</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <section id="experience">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Career Journey</div>
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-description">
+                    Building impactful products across healthcare, career platforms, and e-commerce
+                </p>
+            </div>
 
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">July 2024 – Dec 2024</span>
+                    <h3>Full Stack Product Manager Co-op</h3>
+                    <h4>Stage Zero Health - MIT Innovation HQ</h4>
+                    <ul>
+                        <li>Analyzed U.S. ovarian and breast cancer screening markets using NHIS, SEER, and CMS datasets</li>
+                        <li>Built risk-stratified market entry framework; accelerated pilot readiness by 25%</li>
+                        <li>Led development of critical features, driving 30% improvement in platform efficiency</li>
+                        <li>Developed market segmentation model, informing $2M market expansion forecast</li>
+                    </ul>
+                </div>
 
-	
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>Analytical and user-focused Product Manager with 4+ years of experience across health-tech, e-commerce, and ed-tech, delivering data-driven products through strategy, analytics, and Agile execution, Skilled at translating user insights into impactful features and measurable business outcomes.</p>
-          </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">January 2024 – June 2024</span>
+                    <h3>Product Manager</h3>
+                    <h4>YUDI J - Career Platform Startup</h4>
+                    <ul>
+                        <li>Led end-to-end design of job discovery platform; achieved 18% higher user satisfaction</li>
+                        <li>Conducted 20+ user interviews; cut MVP development time by 25%</li>
+                        <li>Defined PRDs and user stories; improved sprint velocity by 15%</li>
+                        <li>Created adoption dashboards; insights lifted user retention by 22%</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">June 2021 – Dec 2023</span>
+                    <h3>Senior Product Associate</h3>
+                    <h4>Amazon</h4>
+                    <ul>
+                        <li>Led product classification automation using ML; improved accuracy by 20%</li>
+                        <li>Collaborated cross-functionally to streamline processes; reduced audit failures by 15%</li>
+                        <li>Conducted root-cause analysis; drove 12% improvement in operational efficiency</li>
+                        <li>Managed Agile sprints ensuring 100% on-time delivery aligned with customer needs</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-		<div class="row">
-			<h1 class="big-4">Experience</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">July 2025 – Dec 2025</span>
-						<h2>Stage Zero Health - MIT Innovation HQ, Cambridge, MA</h2>
-						<span class="position">Full Stack Product Manager Coop</span>
-						<p class="mt-4">Stage Zero Health is a cancer prevention startup from MIT Innovation Headquarters focused on transforming early detection through personalized risk assessment and proactive screening strategies, helping individuals catch cancer at stage zero before it progresses. 
-							<ul>
-								<li>Analyzed U.S. ovarian and breast cancer screening markets using NHIS, SEER, and CMS datasets; identified 3 underserved population segments, guiding targeted go-to-market decisions.</li>
-                                <li>Built risk-stratified market entry framework using QCancer and BOADICEA models; findings shaped product positioning and accelerated pilot readiness by 25%.</li>
-                                <li>Collaborating with engineering and design teams to build one of the product’s most critical features, focusing on usability, data integrity,and workflow optimization — driving 30% improvement in end-to-end platform efficiency.</li>
-                                <li>Developed market segmentation and payer dynamics model, improving visibility into reimbursement gaps and informing $2M market expansion forecast.</li>
-                                <li>Partnered with engineering and design teams to define MVP features and health-data modules; enhanced platform usability and boosted product completeness by 30% ahead of launch.</li>
-						</p>
-					</div>
-
-				</div>
-
-                <div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">January 2025 – June 2025</span>
-						<h2>YUDI J</h2>
-						<span class="position">Product Manager, USA</span>
-						<p class="mt-4">YUDI J is a career platform startup focused on empowering international students in the U.S. to discover job opportunities and navigate the complex employment landscape through personalized matching and guidance. 
-							<ul>
-								<li>Spearheaded end-to-end design and delivery of a job discovery platform for international students, resulting in 18% higher user satisfaction in usability testing.</li>
-                                <li>Conducted 20+ user interviews, prototyped features, and integrated feedback into the roadmap; cut MVP development time by 25%.</li>
-                                <li>Defined detailed PRDs, user stories, and acceptance criteria in Jira; improved sprint velocity by 15% through clearer developer alignment.</li>
-                                <li>Led Agile ceremonies across 4 major sprints with a global team of 6; ensured 100% on-time feature release and maintained QA coverage for all core modules.</li>
-                                <li>Created adoption dashboards tracking engagement and retention; insights guided design changes that lifted user retention by 22%.</li>
-						</p>
-					</div>
-
-				</div>
-
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">June 2021 – Dec 2023</span>
-						<h2>Senior Product Associate</h2>
-						<span class="position">Amazon</span>
-						<p class="mt-4">Amazon is a global leader in e-commerce, cloud computing, and digital innovation, known for its customer-centric approach and large-scale supply chain operations serving millions worldwide. 
-							<ul>
-								<li>Led end-to-end product classification automation project, integrating machine learning models to enhance product tagging accuracy, improving classification precision by 20% and reducing manual interventions by 30%.</li>
-								<li>Collaborated cross-functionally with engineering, supply chain, and risk compliance teams to streamline product lifecycle processes, achieving 15% reduction in audit failures and ensuring seamless product onboarding.</li>
-								<li>Conducted root-cause analysis on classification errors and process bottlenecks, driving process optimization strategies that resulted in 12% improvement in operational efficiency.</li>
-								<li>Managed cross-functional sprints, working with engineering and product teams to prioritize features, backlog grooming, and sprint planning — ensuring delivery aligned with customer expectations and regulatory requirements.</li>
-								<li>Developed and presented product improvement proposals to senior leadership, influencing roadmap prioritization and driving adoption of automated classification tools across global teams.</li>
-						</p>
-					</div>
-
-				</div>
-
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">Jan 2024 - Apr 2024</span>
-						<h2>VLSI Design Intern</h2>
-						<span class="position">Don Bosco Electronics Research Centre</span>
-						<p class="mt-4">A collaborative research lab focused on VLSI design and semiconductor innovation, offering hands-on projects for student researchers 
-							<ul>
-								<li>Conducted end-to-end design and optimization of a 16-bit Carry Select Adder and decoders using reversible logic gates, improving energy efficiency by 18% and enhancing circuit performance.</li>
-								<li>Utilized Cadence tools for functional validation, ensuring compliance with low-power design principles, and reducing propagation delay by 12%.</li>
-								<li>Collaborated with research teams, applying structured design thinking techniques to evaluate trade-offs between speed, power, and area, delivering a balanced and optimized design.</li>
-								<li>Documented research findings and process improvements, contributing to knowledge sharing and future project reference within the research center.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
-			</div>
-
-		<br>
-		<br>
-
-		<div class="row">
-			<h1 class="big-4">Education</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-			<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2024-2025</span>
-    					<h2>Master of Science in Engineering Management</h2>
-    					<span class="position">Northeastern university</span>
-    					<p class="mt-4">Grade: 3.9/4.0</p>
-    				</div>
-    			</div>
-
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2017-2021</span>
-    					<h2>Bachelor of Engineering</h2>
-    					<span class="position">Don Bosco Institute of Technology (VTU)</span>
-    					<p class="mt-4">Grade: First class distinction.</p>
-    				</div>
-				</div>
-    		</div>
-
-    		<div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="https://drive.google.com/file/d/1JXimFMcjr8he-nghOg-NIhXy9w-_Rgkd/view?usp=sharing" class="btn btn-primary py-4 px-5">Download CV</a></p>
-    			</div>
-    		</div>
-    	</div>
     </section>
 
-   
+    <section id="projects">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Portfolio</div>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">
+                    Showcasing product strategy, data analysis, and user-centric design
+                </p>
+            </div>
 
-    <section class="ftco-section" id="project-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Projects</h2>
-            <p>Below are the sample projects on Data Analysis, Project Management, Product Design and Management and Supply Chain.</p>
-          </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"></div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Statistics</span>
+                        </div>
+                        <h3>Digital Marketing Analytics</h3>
+                        <p>Analyzed Instagram vs other platforms using ANOVA, T-tests, and statistical visualization to evaluate platform performance across industries.</p>
+                        <a href="https://github.com/NayanaMagadiNagaraj/Digital-Marketing-Effectiveness" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"></div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Product Management</span>
+                            <span class="tag">FinTech</span>
+                        </div>
+                        <h3>Perqs with Zelle</h3>
+                        <p>Enhanced Zelle's platform by integrating rewards and digital wallet, applying Agile sprints and stakeholder mapping for delivery.</p>
+                        <a href="https://github.com/NayanaMagadiNagaraj/Perqs-with-Zelle" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"></div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Product Design</span>
+                            <span class="tag">EdTech</span>
+                        </div>
+                        <h3>Study Space Booking</h3>
+                        <p>Created PRD with user stories, wireframes, and roadmap for real-time study space booking app with noise monitoring.</p>
+                        <a href="https://github.com/NayanaMagadiNagaraj/Study-Space-Booking-Product" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)"></div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Supply Chain</span>
+                            <span class="tag">Strategy</span>
+                        </div>
+                        <h3>Chobani Supply Chain Analysis</h3>
+                        <p>Analyzed Chobani's end-to-end supply chain to identify opportunities for sustainability and post-pandemic growth.</p>
+                        <a href="https://github.com/NayanaMagadiNagaraj/Chobani-Supply-Chain-Analysis" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/NayanaMagadiNagaraj/Digital-Marketing-Effectiveness" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/NayanaMagadiNagaraj/Digital-Marketing-Effectiveness">Digital Marketing Data Analysis</a></h3>
-                <p>Analyzed the effectiveness of Instagram versus other platforms using statistical techniques including ANOVA, T-tests, and paired testing. Visualized insights through histograms, box plots, and interval plots to evaluate platform performance in driving sales and engagement across industries.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/NayanaMagadiNagaraj/Perqs-with-Zelle" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/NayanaMagadiNagaraj/Perqs-with-Zelle">Perq's with Zelle: Seamless Financial Transactions With Rewards</a></h3>
-                <p>Enhanced Zelle’s platform by integrating rewards and a digital wallet, applying WBS, Gantt charts, Agile sprints, risk assessment, and stakeholder mapping to ensure smooth project delivery.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="https://github.com/NayanaMagadiNagaraj/Study-Space-Booking-Product" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/NayanaMagadiNagaraj/Study-Space-Booking-Product">Study Space Booking Product</a></h3>
-                <p>Created a product requirements document (PRD) with user stories, wireframes, and a product roadmap for a real-time study space booking app, enhancing student experience with noise monitoring and flexible bookings</p>
-              </div>
-            </div>
-          </div>
-        </div>
-	<br>
-		<!-- added justify-content-center to center align the last two projects -->
-		<div class="row d-flex justify-content-center">  
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/NayanaMagadiNagaraj/Chobani-Supply-Chain-Analysis" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/NayanaMagadiNagaraj/Chobani-Supply-Chain-Analysis">Chobani Supply Chain Analysis</a></h3>
-				  <p>Analyzed Chobani’s end-to-end supply chain and competitive strategy to identify opportunities for sustainability, operational resilience, and post-pandemic growth.</p>
-				</div>
-			  </div>
-			</div>
-		 </div>
-	  </div>
     </section>
 
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="container">
-		<div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="7">0</strong>
-                <span>Achievements</span>
-              </div>
+    <section id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Get In Touch</div>
+                <h2 class="section-title">Let's Build Something Amazing</h2>
+                <p class="section-description">
+                    Open to Product Management opportunities and collaborations
+                </p>
             </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="10">0</strong>
-                <span>Projects</span>
-              </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>📍 Location</h4>
+                        <p>Boston, Massachusetts, USA</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📧 Email</h4>
+                        <a href="mailto:magadinagaraj.n@northeastern.edu">magadinagaraj.n@northeastern.edu</a>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📱 Phone</h4>
+                        <a href="tel:+18574075366">+1 (857) 407-5366</a>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/nayanamn25/" class="social-link">in</a>
+                        <a href="https://github.com/NayanaMagadiNagaraj" class="social-link">gh</a>
+                        <a href="https://drive.google.com/file/d/1JXimFMcjr8he-nghOg-NIhXy9w-_Rgkd/view?usp=sharing" class="social-link">📄</a>
+                    </div>
+                </div>
+
+                <div style="padding: 2rem; background: rgba(255, 255, 255, 0.03); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                    <h3 style="color: var(--white); margin-bottom: 1.5rem; font-size: 1.8rem;">Ready to Collaborate?</h3>
+                    <p style="color: var(--text-light); margin-bottom: 2rem; line-height: 1.8;">
+                        I'm actively seeking full-time Product Management opportunities in healthcare, fintech, or consumer tech. 
+                        Let's connect and discuss how I can drive impact at your organization.
+                    </p>
+                    <a href="mailto:magadinagaraj.n@northeastern.edu" class="btn btn-primary">Send Message</a>
+                </div>
             </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="4">0</strong>
-                <span>CGPA</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="5">0</strong>
-                <span>Certifications</span>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<!-- <div class="container"> -->
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>More projects on<span> Github  </span> </h2>
-						<div class="heading"> <h4> one story at a time - Crafting products that people love &amp; uncover hidden data stories </h4>
-						<br>
-						<p><a href="https://github.com/NayanaMagadiNagaraj" class="btn btn-primary py-3 px-5">GitHub</a></p>
-						</div>
-					</div>
-				</div>
-			<!-- </div> -->
-		</div>
-	</section>
+    </section>
 
+    <footer>
+        <p>&copy; 2025 Nayana Magadi Nagaraj. Crafted with passion for product excellence.</p>
+    </footer>
 
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Below are the details to reach out to me!</p>
-          </div>
-        </div>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Boston, MA, USA</p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0101010101">+18574075366</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:info@yoursite.com">magadinagaraj.n@northeastern.edu</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="https://drive.google.com/file/d/1JXimFMcjr8he-nghOg-NIhXy9w-_Rgkd/view?usp=sharing">resumelink</a></p>
-	          </div>
-          </div>
+        // Animate skill bars on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
 
-		  <div class="container">
-			<br>
-			<br>
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="#" class="btn btn-primary py-3 px-5">Mail Me</a> </h2>
-				</div>
-			</div>
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/nayanamn25/"><span class="icon-linkedin"></span></a></li>  
-					  <li class="ftco-animate"><a href="https://github.com/NayanaMagadiNagaraj"><span class="icon-github"></span></a></li>
-					</ul>
-				<br>
-		   </div>
-   </div>
- </section>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = entry.target.getAttribute('style').match(/width:\s*(\d+%)/)[1];
+                }
+            });
+        }, observerOptions);
 
-
- 
-	
-    <footer class="ftco-footer ftco-section">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 text-center">
-  
-			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			</div>
-		  </div>
-		</div>
-	  </footer>
-
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-    
-  </body>
+        document.querySelectorAll('.skill-progress').forEach(bar => {
+            observer.observe(bar);
+        });
+    </script>
+</body>
 </html>
